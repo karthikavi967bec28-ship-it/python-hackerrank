@@ -1,0 +1,24 @@
+import string
+
+def print_rangoli(size):
+    # Get all lowercase letters
+    alphabet = string.ascii_lowercase
+    
+    # Calculate the total width: (4 * size) - 3
+    # Each letter has a hyphen except the last, and we go both ways
+    width = (size * 4) - 3
+    lines = []
+
+    for i in range(size):
+        # Slice alphabet from 'size-1' down to 'i'
+        # e.g., if size=3 and i=0, letters = ['c', 'b', 'a']
+        s = "-".join(alphabet[size-1 : i : -1] + alphabet[i : size])
+        lines.append(s.center(width, "-"))
+
+    # Join top half, the middle line, and bottom half (reversed top)
+    # The middle line is the last item in our loop (i=0)
+    # So we join lines[::-1] for top, and lines[1:] for bottom
+    result = lines[::-1] + lines[1:]
+    print("\n".join(result))
+
+
