@@ -1,0 +1,16 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+
+# Read input string
+s = input()
+
+# Regex Breakdown:
+# ([a-zA-Z0-9]) : A capturing group for any alphanumeric character
+# \1            : A backreference to the first group, matching if it repeats
+m = re.search(r'([a-zA-Z0-9])\1', s)
+
+# If a match is found, print the repeating character (group 1)
+if m:
+    print(m.group(1))
+else:
+    print(-1)
