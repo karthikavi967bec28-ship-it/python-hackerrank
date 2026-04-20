@@ -1,0 +1,22 @@
+
+
+maxdepth = 0
+def depth(elem, level):
+    global maxdepth
+    # your code goes here
+import sys
+import xml.etree.ElementTree as etree
+
+maxdepth = 0
+
+def depth(elem, level):
+    global maxdepth
+    # Update maxdepth if the current level is higher
+    if level + 1 > maxdepth:
+        maxdepth = level + 1
+    
+    # Recursively check all children, incrementing the level
+    for child in elem:
+        depth(child, level + 1)
+
+
