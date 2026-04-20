@@ -1,0 +1,15 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import sys
+
+# Read number of test cases
+for _ in range(int(input())):
+    try:
+        # Split input into a and b
+        a, b = input().split()
+        
+        # Perform integer division
+        print(int(a) // int(b))
+        
+    except (ZeroDivisionError, ValueError) as e:
+        # Print the specific error message as the "Error Code"
+        print("Error Code:", e)
