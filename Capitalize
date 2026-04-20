@@ -1,0 +1,17 @@
+
+
+
+
+
+import os
+
+def solve(s):
+    # Split by spaces to keep the original spacing structure
+    # Capitalize each word individually
+    # Join them back together with a single space
+    words = s.split(' ')
+    capitalized_words = [word.capitalize() for word in words]
+    return ' '.join(capitalized_words)
+
+
+
