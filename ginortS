@@ -1,0 +1,13 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+S = input()
+
+# 1. Separate characters into categories
+lowers = [c for c in S if c.islower()]
+uppers = [c for c in S if c.isupper()]
+odds = [c for c in S if c.isdigit() and int(c) % 2 != 0]
+evens = [c for c in S if c.isdigit() and int(c) % 2 == 0]
+
+# 2. Sort each category and join them in the required order
+result = "".join(sorted(lowers) + sorted(uppers) + sorted(odds) + sorted(evens))
+
+print(result)
