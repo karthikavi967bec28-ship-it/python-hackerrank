@@ -1,0 +1,13 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read the four integers from separate lines
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+
+# Calculate (a to the power of b) + (c to the power of d)
+# Python handles the massive resulting integer automatically
+result = pow(a, b) + pow(c, d)
+
+# Print the final result
+print(result)
