@@ -1,0 +1,15 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read the total number of stamps
+n = int(input())
+
+# Initialize an empty set to store country names
+distinct_stamps = set()
+
+# Loop N times to get each country name
+for _ in range(n):
+    stamp = input()
+    distinct_stamps.add(stamp)
+
+# Print the total number of distinct elements
+print(len(distinct_stamps))
+
