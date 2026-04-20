@@ -1,0 +1,23 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read initial set A
+_ = input()  # Set size (not strictly needed)
+A = set(map(int, input().split()))
+
+# Read number of operations
+n = int(input())
+
+for _ in range(n):
+    # Split the command line: e.g., ["intersection_update", "10"]
+    command_info = input().split()
+    cmd_name = command_info[0]
+    
+    # Read the elements of the other set
+    other_set = set(map(int, input().split()))
+    
+    # Use getattr to find the method on set A and call it
+    # This is equivalent to: A.update(other_set) or A.intersection_update(other_set)
+    getattr(A, cmd_name)(other_set)
+
+# Print the final sum of elements in set A
+print(sum(A))
+
