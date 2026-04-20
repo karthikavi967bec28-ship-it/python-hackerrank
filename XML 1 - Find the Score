@@ -1,0 +1,14 @@
+
+import sys
+import xml.etree.ElementTree as etree
+
+def get_attr_number(node):
+    # Start with the number of attributes for the current node
+    count = len(node.attrib)
+    
+    # Recursively add the attributes of all child nodes
+    for child in node:
+        count += get_attr_number(child)
+        
+    return count
+
