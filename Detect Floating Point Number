@@ -1,0 +1,22 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+
+def validate_float():
+    # Number of test cases
+    n = int(input())
+    
+    # Regex Pattern breakdown:
+    # ^[+-]? : Optional starting + or -
+    # [0-9]* : Zero or more digits before the decimal
+    # \.     : Exactly one literal decimal point
+    # [0-9]+ : At least one digit after the decimal
+    # $      : Ensures no extra characters exist after the number
+    pattern = r'^[+-]?[0-9]*\.[0-9]+$'
+    
+    for _ in range(n):
+        s = input().strip()
+        # bool() returns True if there is a match, False otherwise
+        print(bool(re.match(pattern, s)))
+
+if __name__ == "__main__":
+    validate_float()
